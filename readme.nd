@@ -1,0 +1,39 @@
+library = {
+    'DELD': 3,
+    'OOP': 4,
+    'CG': 4,
+    'DM': 5,
+    'UHV': 2
+}
+
+print(library)
+
+
+def avg(library):
+    
+    total_borrowed = sum(library.values())
+    total_books = len(library)
+    average = (total_borrowed / total_books)
+    return average
+
+a = avg(library)
+print(a)
+
+
+      
+def highest_lowest(library):
+    highest = max(library, key=library.get)
+    lowest = min(library,key=library.get)
+    return highest, lowest
+
+
+highest, lowest = highest_lowest(library)
+print("The highest borrowed book",highest)
+print("The lowest borrowed book",lowest)
+
+def CountFreq(library):
+    freq = {}
+    for items in library:
+        freq[items] = freq.get(items,0)+1
+    print(freq)
+CountFreq(library)
